@@ -6,20 +6,26 @@ public class EmployeeWage {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Welcome to Employee Wage Computation");
-        double attendanceCheck = Math.floor(Math.random() * 10) % 3;
         int WagePerHr = 20;
         int EmpWage;
-        if(attendanceCheck == 1){
-            System.out.println("Employee is PRESENT");
-            System.out.println("Employee's Wage: " + 8*WagePerHr);
-        }
-        else if(attendanceCheck==2){
-            System.out.println("Employee is Part Time");
-            System.out.println("Employee's Wage: " + 4*WagePerHr);
-        }
-        else {
-            System.out.println("Employee is ABSENT");
-            System.out.println("Employee's Wage: " + 0*WagePerHr);
+        int attendanceCheck = (int) (Math.floor(Math.random() * 10) % 3);
+
+        switch (attendanceCheck) {
+            case 1:
+                System.out.println("Employee is PRESENT");
+                EmpWage = 8 * WagePerHr;
+                System.out.println("Employee's Wage: " + EmpWage);
+                break;
+            case 2:
+                System.out.println("Employee is Part Time");
+                EmpWage = 4 * WagePerHr;
+                System.out.println("Employee's Wage: " + EmpWage);
+                break;
+            default:
+                System.out.println("Employee is ABSENT");
+                EmpWage = 0 * WagePerHr;
+                System.out.println("Employee's Wage: " + EmpWage);
+                break;
         }
     }
 }
