@@ -1,31 +1,29 @@
-import java.util.Scanner;
 import java.util.Random;
 
 public class EmployeeWage {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Welcome to Employee Wage Computation");
         int WagePerHr = 20;
-        int EmpWage;
-        int attendanceCheck = (int) (Math.floor(Math.random() * 10) % 3);
+        int FullDayHrs = 8;
+        int PartTimeHrs = 4;
+        int WorkingDays = 20;
+        int totalWage = 0;
 
-        switch (attendanceCheck) {
-            case 1:
-                System.out.println("Employee is PRESENT");
-                EmpWage = 8 * WagePerHr;
-                System.out.println("Employee's Wage: " + EmpWage);
-                break;
-            case 2:
-                System.out.println("Employee is Part Time");
-                EmpWage = 4 * WagePerHr;
-                System.out.println("Employee's Wage: " + EmpWage);
-                break;
-            default:
-                System.out.println("Employee is ABSENT");
-                EmpWage = 0 * WagePerHr;
-                System.out.println("Employee's Wage: " + EmpWage);
-                break;
+        System.out.println("Calculating Wages for a Month (20 Working Days)");
+        for (int day = 1; day <= WorkingDays; day++) {
+            int attendance = (int) Math.floor(Math.random() * 10) % 3;
+
+            switch (attendance) {
+                case 1:
+                    totalWage += FullDayHrs * WagePerHr;
+                    break;
+                case 2:
+                    totalWage += PartTimeHrs * WagePerHr;
+                    break;
+                default:
+                    break;
+            }
         }
+
+        System.out.println("Total Wage for the Month: " + totalWage);
     }
 }
