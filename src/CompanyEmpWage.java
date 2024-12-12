@@ -1,4 +1,4 @@
-public class CompanyEmpWage {
+class CompanyEmpWage {
     private String company;
     private int wagePerHr;
     private int fullDayHrs;
@@ -24,11 +24,25 @@ public class CompanyEmpWage {
         return company;
     }
 
-    public int getWagePerHr() { return wagePerHr; }
-    public int getFullDayHrs() { return fullDayHrs; }
-    public int getPartTimeHrs() { return partTimeHrs; }
-    public int getMaxWorkingHrs() { return maxWorkingHrs; }
-    public int getMaxWorkingDays() { return maxWorkingDays; }
+    public int getWagePerHr() {
+        return wagePerHr;
+    }
+
+    public int getFullDayHrs() {
+        return fullDayHrs;
+    }
+
+    public int getPartTimeHrs() {
+        return partTimeHrs;
+    }
+
+    public int getMaxWorkingHrs() {
+        return maxWorkingHrs;
+    }
+
+    public int getMaxWorkingDays() {
+        return maxWorkingDays;
+    }
 
     @Override
     public String toString() {

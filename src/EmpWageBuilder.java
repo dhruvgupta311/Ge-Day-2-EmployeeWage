@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
-public class EmpWageBuilder implements IEmployeeWage {
+class EmpWageBuilder implements IEmployeeWage {
     private ArrayList<CompanyEmpWage> companies;
 
-    public EmpWageBuilder(){
+    public EmpWageBuilder() {
         companies = new ArrayList<>();
     }
 
@@ -25,6 +25,7 @@ public class EmpWageBuilder implements IEmployeeWage {
         int totalHrs = 0;
         int totalDays = 0;
         int totalWage = 0;
+
         while (totalHrs < company.getMaxWorkingHrs() && totalDays < company.getMaxWorkingDays()) {
             int attendance = (int) Math.floor(Math.random() * 10) % 3;
             totalDays++;
@@ -46,6 +47,7 @@ public class EmpWageBuilder implements IEmployeeWage {
                     break;
             }
         }
+
         return totalWage;
     }
 }
