@@ -7,5 +7,13 @@ public class Main {
         empWageBuilder.addCompany("Company C", 30, 7, 3, 90, 18);
 
         empWageBuilder.calculateWages();
+
+        String companyName = "Company A";
+        int totalWage = empWageBuilder.getTotalWageByCompany(companyName);
+        if (totalWage != -1) {
+            System.out.println("Total Wage for " + companyName + ": " + totalWage);
+        } else {
+            System.out.println("Company " + companyName + " not found.");
+        }
     }
 }

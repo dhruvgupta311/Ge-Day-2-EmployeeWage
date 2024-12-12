@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-class CompanyEmpWage {
+public class CompanyEmpWage {
     private String company;
     private int wagePerHr;
     private int fullDayHrs;
@@ -30,6 +30,10 @@ class CompanyEmpWage {
 
     public String getCompany() {
         return company;
+    }
+
+    public int getTotalWage() {
+        return totalWage;
     }
 
     public int getWagePerHr() {

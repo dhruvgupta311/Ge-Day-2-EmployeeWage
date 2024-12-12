@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-class EmpWageBuilder implements IEmployeeWage {
+public class EmpWageBuilder implements IEmployeeWage {
     private ArrayList<CompanyEmpWage> companies;
 
     public EmpWageBuilder() {
@@ -52,5 +52,15 @@ class EmpWageBuilder implements IEmployeeWage {
         }
 
         return totalWage;
+    }
+
+    @Override
+    public int getTotalWageByCompany(String companyName) {
+        for (CompanyEmpWage company : companies) {
+            if (company.getCompany().equals(companyName)) {
+                return company.getTotalWage();
+            }
+        }
+        return -1; // If company is not found
     }
 }
