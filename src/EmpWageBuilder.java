@@ -28,24 +28,27 @@ class EmpWageBuilder implements IEmployeeWage {
 
         while (totalHrs < company.getMaxWorkingHrs() && totalDays < company.getMaxWorkingDays()) {
             int attendance = (int) Math.floor(Math.random() * 10) % 3;
+            int dailyWage = 0;
             totalDays++;
 
             switch (attendance) {
                 case 1:
                     if (totalHrs + company.getFullDayHrs() <= company.getMaxWorkingHrs()) {
                         totalHrs += company.getFullDayHrs();
-                        totalWage += company.getFullDayHrs() * company.getWagePerHr();
+                        dailyWage = company.getFullDayHrs() * company.getWagePerHr();
                     }
                     break;
                 case 2:
                     if (totalHrs + company.getPartTimeHrs() <= company.getMaxWorkingHrs()) {
                         totalHrs += company.getPartTimeHrs();
-                        totalWage += company.getPartTimeHrs() * company.getWagePerHr();
+                        dailyWage = company.getPartTimeHrs() * company.getWagePerHr();
                     }
                     break;
                 default:
                     break;
             }
+            totalWage += dailyWage;
+            company.addDailyWage(dailyWage);
         }
 
         return totalWage;
