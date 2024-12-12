@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-
-class CompanyEmpWage {
+public class CompanyEmpWage {
     private String company;
     private int wagePerHr;
     private int fullDayHrs;

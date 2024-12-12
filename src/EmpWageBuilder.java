@@ -1,16 +1,18 @@
 import java.util.ArrayList;
 
-class EmpWageBuilder {
+public class EmpWageBuilder implements IEmployeeWage {
     private ArrayList<CompanyEmpWage> companies;
 
-    public EmpWageBuilder() {
+    public EmpWageBuilder(){
         companies = new ArrayList<>();
     }
 
+    @Override
     public void addCompany(String company, int wagePerHr, int fullDayHrs, int partTimeHrs, int maxWorkingHrs, int maxWorkingDays) {
         companies.add(new CompanyEmpWage(company, wagePerHr, fullDayHrs, partTimeHrs, maxWorkingHrs, maxWorkingDays));
     }
 
+    @Override
     public void calculateWages() {
         for (CompanyEmpWage company : companies) {
             int totalWage = calculateWageForCompany(company);
@@ -23,7 +25,6 @@ class EmpWageBuilder {
         int totalHrs = 0;
         int totalDays = 0;
         int totalWage = 0;
-
         while (totalHrs < company.getMaxWorkingHrs() && totalDays < company.getMaxWorkingDays()) {
             int attendance = (int) Math.floor(Math.random() * 10) % 3;
             totalDays++;
@@ -45,7 +46,6 @@ class EmpWageBuilder {
                     break;
             }
         }
-
         return totalWage;
     }
 }

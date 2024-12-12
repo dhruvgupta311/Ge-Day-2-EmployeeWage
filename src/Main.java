@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        EmpWageBuilder empWageBuilder = new EmpWageBuilder();
+        IEmployeeWage empWageBuilder = new EmpWageBuilder();
 
         empWageBuilder.addCompany("Company A", 20, 8, 4, 100, 20);
         empWageBuilder.addCompany("Company B", 25, 9, 5, 120, 25);
